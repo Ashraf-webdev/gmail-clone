@@ -1,0 +1,1251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <!-- google font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <!-- font awesome link -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="shortcut icon" href="https://ssl.gstatic.com/ui/v1/icons/mail/rfr/gmail.ico" type="image/x-icon">
+    <title>Inbox (350) - ashraf@gmail.com - Gmail - Clone</title>
+    <style>
+        .menu-container:hover .menu-item {
+            display: inline-block;
+        }
+
+        .mailContainer:hover .mailTime {
+            display: none;
+        }
+
+        .mailContainer:hover .toolbarContainer {
+            display: inline-block;
+        }
+
+        .mailContainer:hover .mailIcon {
+            opacity: 1;
+        }
+
+        ::-webkit-scrollbar {
+            width: 10px;
+        }
+
+        ::-webkit-scrollbar-track {
+            box-shadow: inset 0 0 5px white; 
+            border-radius: 8px;
+        }
+
+ 
+        ::-webkit-scrollbar-thumb {
+            background: #CCCCCC; 
+            border-radius: 8px;
+        }
+
+    </style>
+</head>
+<body class="font-roboto">
+    <div class="bg-[#F6F8FC] h-screen w-full flex">
+        <div class="h-full w-1/4 flex">
+            <div class="flex flex-col gap-6 bg-[#EAF1FB] h-full w-1/4 pl-2 pt-4">
+                <div class="h-11 w-11 rounded-full flex justify-center items-center transition-all duration-700 cursor-pointer hover:bg-[#dadce0]">
+                    <i class="fa-solid fa-bars text-[#5f6368] text-xl"></i>
+                </div>
+                <div class="flex flex-col gap-4">
+                    <div class="w-12 flex flex-col gap-[3px] text-center">
+                        <div class="bg-[#D3E3FD] relative w-12 h-8 flex justify-center items-center rounded-full cursor-pointer ">
+                            <img class="w-[20px] h-[20px]" src="/assests/inbox-icon.png">
+                            <div class="h-[22px] w-[35px] text-center flex justify-center items-center absolute bg-[#b3261e] rounded-full top-[-7px] right-[-7px] border-2 border-[#eaf1fb]">
+                                <p class="text-white font-bold text-xs leading-none">99+</p>
+                            </div>
+                        </div>
+                        <div>
+                            <p class="text-xs font-medium">Mail</p>
+                        </div>
+                    </div>                  
+                    <div class="w-12 flex flex-col gap-[3px] text-center">
+                        <div class=" w-12 h-8 flex justify-center items-center rounded-full transition-all duration-700 hover:bg-[#dadce0] cursor-pointer ">
+                            <img class="w-[20px] h-[20px]" src="/assests/chat_icon.png">
+                        </div>
+                        <div>
+                            <p class="text-xs font-medium text-[#444746]">Chat</p>
+                        </div>
+                    </div>                  
+                    <div class="w-12 flex flex-col gap-[3px] text-center">
+                        <div class=" w-12 h-8 flex justify-center items-center rounded-full transition-all duration-700 hover:bg-[#dadce0] cursor-pointer ">
+                            <img class="w-[20px] h-[20px]" src="/assests/meet_icon.png">
+                        </div>
+                        <div>
+                            <p class="text-xs font-medium text-[#444746]">Meet</p>
+                        </div>
+                    </div>                  
+                </div>
+            </div>
+            <div class="h-full w-4/5 px-3 pt-4">
+                <div class="pl-2">
+                    <img src="assests/logo_gmail.png">
+                </div>
+                <div class="bg-[#C2E7FF] w-3/5 h-12 rounded-xl flex justify-center items-center gap-x-4 my-5 hover:shadow-lg cursor-pointer">
+                    <div>
+                        <img src="/assests/create_icon.png" >
+                    </div>
+                    <div class="text-[#001d35]">Compose</div>
+                </div>
+                <div>
+                    <div class="bg-[#D3E3FD] w-full rounded-full flex items-center px-3 py-1 cursor-pointer">
+                        <div class="w-1/5">
+                            <img src="/assests/inbox_fill_baseline_p900_20dp.png">
+                        </div>
+                        <div class="flex justify-between items-center w-4/5">
+                            <p class="text-sm font-bold text-[#001d35]">Inbox</p>
+                            <p class="text-xs font-bold text-[#001d35]">350</p>
+                        </div>
+                    </div>
+                    <div class="w-full rounded-full flex items-center px-3 py-1 hover:bg-[#dadce0] cursor-pointer">
+                        <div class="w-1/5">
+                            <img src="/assests/star_baseline_nv700_20dp.png">
+                        </div>
+                        <div class="flex justify-between items-center w-4/5">
+                            <p class="text-sm text-[#202124]">Starred</p>
+                        </div>
+                    </div>
+                    <div class="w-full rounded-full flex items-center px-3 py-1 hover:bg-[#dadce0] cursor-pointer">
+                        <div class="w-1/5">
+                            <img src="/assests/schedule_baseline_nv700_20dp.png">
+                        </div>
+                        <div class="flex justify-between items-center w-4/5">
+                            <p class="text-sm text-[#202124]">Snoozed</p>
+                        </div>
+                    </div>
+                    <div class="w-full rounded-full flex items-center px-3 py-1 hover:bg-[#dadce0] cursor-pointer">
+                        <div class="w-1/5">
+                            <img src="/assests/send_baseline_nv700_20dp.png">
+                        </div>
+                        <div class="flex justify-between items-center w-4/5">
+                            <p class="text-sm text-[#202124]">Sent</p>
+                        </div>
+                    </div>
+                    <div class="w-full rounded-full flex items-center px-3 py-1 hover:bg-[#dadce0] cursor-pointer">
+                        <div class="w-1/5">
+                            <img src="/assests/draft_baseline_nv700_20dp.png">
+                        </div>
+                        <div class="flex justify-between items-center w-4/5">
+                            <p class="text-sm font-bold text-[#202124]">Drafts</p>
+                            <p class="text-xs text-[#001d35]">5</p>
+                        </div>
+                    </div>
+                    <div class="w-full rounded-full flex items-center px-3 py-1 hover:bg-[#dadce0] cursor-pointer">
+                        <div class="w-1/5">
+                            <img src="/assests/expand_more_baseline_nv700_20dp.png">
+                        </div>
+                        <div class="flex justify-between items-center w-4/5">
+                            <p class="text-sm text-[#202124]">More</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="mt-7">
+                    <div class="flex justify-between pl-2 items-center">
+                        <h5 class="text-base font-medium text-[#1f1f1f]">Labels</h5>
+                        <div class="w-8 h-8 rounded-full flex justify-center items-center hover:bg-[#dadce0]">
+                            <img src="/assests/add_large_baseline_nv700_20dp.png">
+                        </div>
+                    </div>
+                    <div class="w-full rounded-full flex items-center px-3 py-1 menu-container hover:bg-[#dadce0] cursor-pointer">
+                        <div class="w-1/5">
+                            <img src="/assests/label_gm_grey_24dp.png">
+                        </div>
+                        <div class="flex justify-between items-center w-4/5">
+                            <p class="text-sm text-[#202124]">[Imap]/Sent</p>
+                            <div class="hidden w-3 h-6 rounded-full menu-item">
+                                <i class="fa-solid fa-ellipsis-vertical"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="w-full rounded-full flex items-center px-3 py-1 hover:bg-[#dadce0] cursor-pointer menu-container">
+                        <div class="w-1/5">
+                            <img src="/assests/label_gm_grey_24dp.png">
+                        </div>
+                        <div class="flex justify-between items-center w-4/5">
+                            <p class="text-sm text-[#202124]">Junk</p>
+                            <div class="hidden w-3 h-6 rounded-full menu-item">
+                                <i class="fa-solid fa-ellipsis-vertical"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="h-full w-3/4 flex justify-between pt-1">
+            <div class="w-[93%] h-full flex flex-col gap-2">
+                <div class="flex h-[10%]  items-center gap-3">
+                    <div class="w-3/4 h-12 bg-[#EAF1FB] rounded-full flex justify-between items-center px-3">
+                        <div class="flex items-center w-4/5">
+                            <div class="w-8 h-8 rounded-full flex justify-center items-center hover:bg-[#dadce0]">
+                                <i class="fa-solid fa-magnifying-glass"></i>
+                            </div>
+                            <div class="w-full">
+                                <input type="text" placeholder="Search in mail" class="bg-[transparent] text-[red] border-0 outline-0">
+                            </div>
+                        </div>
+                        <div class="w-8 h-8 rounded-full flex justify-center items-center hover:bg-[#dadce0]">
+                            <i class="fa-solid fa-sliders"></i>
+                        </div>
+                    </div>
+                    <div class="h-12 bg-[#EAF1FB] rounded-full flex justify-between items-center gap-2 px-2 cursor-pointer hover:bg-[#E4ECF8]">
+                        <div class="w-3 h-3 bg-[#1e8e3e] rounded-full"></div>
+                        <p class="text-sm font-medium">Active</p>
+                        <i class="fa-solid fa-angle-down text-sm"></i>
+                    </div>
+                    <div class="flex gap-3">
+                        <div class="w-9 h-9 rounded-full flex justify-center items-center hover:bg-[#3c404314]">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="w-[30px] h-[23px] text-[#5f6368] cursor-pointer" viewBox="0 0 24 24" fill="currentColor" focusable="false">
+                                <path fill="none" d="M0 0h24v24H0z"></path>
+                                <path d="M11 18h2v-2h-2v2zm1-16C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm0-14c-2.21 0-4 1.79-4 4h2c0-1.1.9-2 2-2s2 .9 2 2c0 2-3 1.75-3 5h2c0-2.25 3-2.5 3-5 0-2.21-1.79-4-4-4z"></path>
+                              </svg>
+                        </div>
+                        <div class="w-9 h-9 rounded-full flex justify-center items-center hover:bg-[#3c404314]">
+                            <svg fill="currentColor" xmlns="http://www.w3.org/2000/svg" 
+                            class="w-[30px] h-[23px] text-[#5f6368] cursor-pointer" viewBox="0 0 24 24">
+                                <path d="M13.85 22.25h-3.7c-.74 0-1.36-.54-1.45-1.27l-.27-1.89c-.27-.14-.53-.29-.79-.46l-1.8.72c-.7.26-1.47-.03-1.81-.65L2.2 15.53c-.35-.66-.2-1.44.36-1.88l1.53-1.19c-.01-.15-.02-.3-.02-.46 0-.15.01-.31.02-.46l-1.52-1.19c-.59-.45-.74-1.26-.37-1.88l1.85-3.19c.34-.62 1.11-.9 1.79-.63l1.81.73c.26-.17.52-.32.78-.46l.27-1.91c.09-.7.71-1.25 1.44-1.25h3.7c.74 0 1.36.54 1.45 1.27l.27 1.89c.27.14.53.29.79.46l1.8-.72c.71-.26 1.48.03 1.82.65l1.84 3.18c.36.66.2 1.44-.36 1.88l-1.52 1.19c.01.15.02.3.02.46s-.01.31-.02.46l1.52 1.19c.56.45.72 1.23.37 1.86l-1.86 3.22c-.34.62-1.11.9-1.8.63l-1.8-.72c-.26.17-.52.32-.78.46l-.27 1.91c-.1.68-.72 1.22-1.46 1.22zm-3.23-2h2.76l.37-2.55.53-.22c.44-.18.88-.44 1.34-.78l.45-.34 2.38.96 1.38-2.4-2.03-1.58.07-.56c.03-.26.06-.51.06-.78s-.03-.53-.06-.78l-.07-.56 2.03-1.58-1.39-2.4-2.39.96-.45-.35c-.42-.32-.87-.58-1.33-.77l-.52-.22-.37-2.55h-2.76l-.37 2.55-.53.21c-.44.19-.88.44-1.34.79l-.45.33-2.38-.95-1.39 2.39 2.03 1.58-.07.56a7 7 0 0 0-.06.79c0 .26.02.53.06.78l.07.56-2.03 1.58 1.38 2.4 2.39-.96.45.35c.43.33.86.58 1.33.77l.53.22.38 2.55z"></path>
+                                <circle cx="12" cy="12" r="3.5"></circle>
+                              </svg>
+                        </div>
+                        <div class="w-9 h-9 rounded-full flex justify-center items-center hover:bg-[#3c404314]">
+                            <svg class="w-[30px] h-[23px] text-[#5f6368] cursor-pointer hidden sm:block" fill="currentColor" focusable="false" viewBox="0 0 24 24">
+                                <path d="M6,8c1.1,0 2,-0.9 2,-2s-0.9,-2 -2,-2 -2,0.9 -2,2 0.9,2 2,2zM12,20c1.1,0 2,-0.9 2,-2s-0.9,-2 -2,-2 -2,0.9 -2,2 0.9,2 2,2zM6,20c1.1,0 2,-0.9 2,-2s-0.9,-2 -2,-2 -2,0.9 -2,2 0.9,2 2,2zM6,14c1.1,0 2,-0.9 2,-2s-0.9,-2 -2,-2 -2,0.9 -2,2 0.9,2 2,2zM12,14c1.1,0 2,-0.9 2,-2s-0.9,-2 -2,-2 -2,0.9 -2,2 0.9,2 2,2zM16,6c0,1.1 0.9,2 2,2s2,-0.9 2,-2 -0.9,-2 -2,-2 -2,0.9 -2,2zM12,8c1.1,0 2,-0.9 2,-2s-0.9,-2 -2,-2 -2,0.9 -2,2 0.9,2 2,2zM18,14c1.1,0 2,-0.9 2,-2s-0.9,-2 -2,-2 -2,0.9 -2,2 0.9,2 2,2zM18,20c1.1,0 2,-0.9 2,-2s-0.9,-2 -2,-2 -2,0.9 -2,2 0.9,2 2,2z"></path>
+                              </svg>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-white w-[100%] h-[85%] rounded-xl overflow-hidden">
+                    <div class="flex justify-between px-3">
+                        <div class="flex gap-x-2">
+                            <div class="flex">
+                                <div class="w-6 h-9 flex justify-center items-center rounded transition-all duration-500 cursor-pointer hover:bg-[#3c404314]">
+                                    <img src="/assests/check_box_outline_blank_baseline_nv700_20dp.png">
+                                </div>
+                                <div class="w-5 h-9 flex justify-center items-center rounded transition-all duration-500 cursor-pointer hover:bg-[#3c404314]">
+                                    <img src="/assests/arrow_drop_down_baseline_nv700_20dp.png">
+                                </div>
+                            </div>
+                            <div class="w-10 h-10 rounded-full flex justify-center items-center transition-all duration-500 cursor-pointer hover:bg-[#3c404314]">
+                                <img src="/assests/refresh_baseline_nv700_20dp.png">
+                            </div>
+                            <div class="w-10 h-10 rounded-full flex justify-center items-center transition-all duration-500 cursor-pointer hover:bg-[#3c404314]">
+                                <img src="/assests/more_vert_baseline_nv700_20dp.png">
+                            </div>
+                        </div>
+                        <div class="flex gap-x-2">
+                            <div class="h-10 px-2 rounded flex justify-center items-center transition-all duration-500 cursor-pointer hover:bg-[#3c404314]">
+                                <div class="text-[#5e5e5e] text-xs font-medium opacity-75">1-50 of 898</div>
+                            </div>
+                            <div class="w-10 h-10 rounded-full flex justify-center items-center transition-all duration-500 opacity-40 ">
+                                <img src="/assests/chevron_left_baseline_nv700_20dp.png">
+                            </div>
+                            <div class="w-10 h-10 rounded-full flex justify-center items-center transition-all duration-500 cursor-pointer hover:bg-[#3c404314]">
+                                <img src="/assests/chevron_right_baseline_nv700_20dp.png">
+                            </div>
+                            <div class="flex">
+                                <div class="w-7 h-9 flex justify-center items-center rounded transition-all duration-500 cursor-pointer hover:bg-[#3c404314]">
+                                    <i class="fa-solid fa-keyboard"></i>
+                                </div>
+                                <div class="w-5 h-9 flex justify-center items-center rounded transition-all duration-500 cursor-pointer hover:bg-[#3c404314]">
+                                    <img src="/assests/arrow_drop_down_baseline_nv700_20dp.png">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="flex flex-col overflow-y-scroll pr-[6px]">
+                        <div class="flex gap-2 border-b-[1px] border-[#d7d7d7] overflow-hidden">
+                            <div class="flex items-center gap-3 w-1/4 p-3 border-b-[3px] border-[#0b57d0] cursor-pointer hover:bg-[#3c404314]">
+                                <img src="/assests/inbox_fill_baseline_p600_20dp.png">
+                                <h5 class="text-sm font-medium text-[#0b57d0]">Primary</h5>
+                            </div>
+                            <div class="flex items-center gap-3 w-1/4 p-3 cursor-pointer hover:bg-[#3c404314]">
+                                <img src="/assests/sell_baseline_nv700_20dp.png">
+                                <h5 class="text-sm font-medium text-[#444746]">Promotions</h5>
+                                <div class="p-1 text-center flex justify-center items-center bg-[#188038] rounded-full">
+                                    <p class="text-white font-medium text-xs leading-none">50 new</p>
+                                </div>
+                            </div>
+                            <div class="flex items-center gap-3 w-1/4 p-3 cursor-pointer hover:bg-[#3c404314]">
+                                <img src="/assests/people_black_20dp.png">
+                                <h5 class="text-sm font-medium text-[#444746]">Social</h5>
+                            </div>
+                         </div>
+                        <div class="flex flex-col gap-[1px] h-[500px]">
+                            <div class="flex bg-white px-2 hover:shadow-md hover:border-[#dadce0] border-b-[1px] hover:border-b-[1px] cursor-pointer mailContainer">
+                                <div class="flex items-center w-1/4">
+                                    <div class="w-8 h-8 flex justify-center items-center rounded-full transition-all duration-500 cursor-pointer hover:bg-[#3c404314]">
+                                        <img src="/assests/check_box_outline_blank_baseline_nv700_20dp.png " class="opacity-40 mailIcon">
+                                    </div>
+                                    <div class="w-8 h-8 flex justify-center items-center rounded-full transition-all duration-500 cursor-pointer hover:bg-[#3c404314]">
+                                        <img src="/assests/star_border_black_20dp.png" class="opacity-40 mailIcon">
+                                    </div>
+                                    <div class="flex items-center pl-2 leading-none">
+                                        <h4 class="text-sm font-bold text-[#202124]">PW Skills</h4>
+                                    </div>
+                                </div>
+                                <div class="flex items-center w-3/4">
+                                    <div class="flex px-3 items-center gap-1 overflow-hidden">
+                                            <h4 class="text-sm font-bold text-[#202124] truncate">Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto, omnis
+                                            </h4>
+                                        <div>-</div>
+                                            <p class="truncate text-sm font-normal text-[#5f6368]">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Doloribus, iure?</p>
+                                    </div>
+                                    <div class="w-[15%] flex justify-end">
+                                        <h4 class="text-xs font-bold text-[#202124] mailTime">12:49 PM</h4>
+                                    </div>
+                                    <div class="hidden toolbarContainer">
+                                        <div class="flex">
+                                            <div class="w-8 h-8 flex justify-center items-center rounded-full transition-all duration-500 cursor-pointer hover:bg-[#3c404314]">
+                                                <img src="/assests/archive_baseline_nv700_20dp.png">
+                                            </div>
+                                            <div class="w-8 h-8 flex justify-center items-center rounded-full transition-all duration-500 cursor-pointer hover:bg-[#3c404314]">
+                                                <img src="/assests/delete_baseline_nv700_20dp.png">
+                                            </div>
+                                            <div class="w-8 h-8 flex justify-center items-center rounded-full transition-all duration-500 cursor-pointer hover:bg-[#3c404314]">
+                                                <img src="/assests/drafts_baseline_nv700_20dp.png">
+                                            </div>
+                                            <div class="w-8 h-8 flex justify-center items-center rounded-full transition-all duration-500 cursor-pointer hover:bg-[#3c404314]">
+                                                <img src="/assests/schedule_baseline_nv700_20dp.png">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="flex px-2 bg-white hover:shadow-md hover:border-[#dadce0] border-b-[1px] hover:border-b-[1px] cursor-pointer mailContainer">
+                                <div class="flex items-center w-1/4">
+                                    <div class="w-8 h-8 flex justify-center items-center rounded-full transition-all duration-500 cursor-pointer hover:bg-[#3c404314]">
+                                        <img src="/assests/check_box_outline_blank_baseline_nv700_20dp.png " class="opacity-40 mailIcon">
+                                    </div>
+                                    <div class="w-8 h-8 flex justify-center items-center rounded-full transition-all duration-500 cursor-pointer hover:bg-[#3c404314]">
+                                        <img src="/assests/star_border_black_20dp.png" class="opacity-40 mailIcon">
+                                    </div>
+                                    <div class="flex items-center pl-2 leading-none">
+                                        <h4 class="text-sm font-bold text-[#202124]">Zoom</h4>
+                                    </div>
+                                </div>
+                                <div class="flex items-center w-3/4">
+                                    <div class="flex px-3 items-center gap-1 overflow-hidden">
+                                            <h4 class="text-sm font-bold text-[#202124] truncate">Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto, omnis
+                                            </h4>
+                                        <div>-</div>
+                                            <p class="truncate text-sm font-normal text-[#5f6368]">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Doloribus, iure?</p>
+                                    </div>
+                                    <div class="w-[15%] flex justify-end">
+                                        <h4 class="text-xs font-bold text-[#202124] mailTime">8:15 AM</h4>
+                                    </div>
+                                    <div class="hidden toolbarContainer">
+                                        <div class="flex">
+                                            <div class="w-8 h-8 flex justify-center items-center rounded-full transition-all duration-500 cursor-pointer hover:bg-[#3c404314]">
+                                                <img src="/assests/archive_baseline_nv700_20dp.png">
+                                            </div>
+                                            <div class="w-8 h-8 flex justify-center items-center rounded-full transition-all duration-500 cursor-pointer hover:bg-[#3c404314]">
+                                                <img src="/assests/delete_baseline_nv700_20dp.png">
+                                            </div>
+                                            <div class="w-8 h-8 flex justify-center items-center rounded-full transition-all duration-500 cursor-pointer hover:bg-[#3c404314]">
+                                                <img src="/assests/drafts_baseline_nv700_20dp.png">
+                                            </div>
+                                            <div class="w-8 h-8 flex justify-center items-center rounded-full transition-all duration-500 cursor-pointer hover:bg-[#3c404314]">
+                                                <img src="/assests/schedule_baseline_nv700_20dp.png">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="flex px-2 bg-white hover:shadow-md hover:border-[#dadce0] border-b-[1px] hover:border-b-[1px] cursor-pointer mailContainer">
+                                <div class="flex items-center w-1/4">
+                                    <div class="w-8 h-8 flex justify-center items-center rounded-full transition-all duration-500 cursor-pointer hover:bg-[#3c404314]">
+                                        <img src="/assests/check_box_outline_blank_baseline_nv700_20dp.png " class="opacity-40 mailIcon">
+                                    </div>
+                                    <div class="w-8 h-8 flex justify-center items-center rounded-full transition-all duration-500 cursor-pointer hover:bg-[#3c404314]">
+                                        <img src="/assests/star_border_black_20dp.png" class="opacity-40 mailIcon">
+                                    </div>
+                                    <div class="flex items-center pl-2 leading-none">
+                                        <h4 class="text-sm font-bold text-[#202124]">IRCTC</h4>
+                                    </div>
+                                </div>
+                                <div class="flex items-center w-3/4">
+                                    <div class="flex px-3 items-center gap-1 overflow-hidden">
+                                            <h4 class="text-sm font-bold text-[#202124] truncate">Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto, omnis
+                                            </h4>
+                                        <div>-</div>
+                                            <p class="truncate text-sm font-normal text-[#5f6368]">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Doloribus, iure?</p>
+                                    </div>
+                                    <div class="w-[15%] flex justify-end">
+                                        <h4 class="text-xs font-bold text-[#202124] mailTime">Dec 3</h4>
+                                    </div>
+                                    <div class="hidden toolbarContainer">
+                                        <div class="flex">
+                                            <div class="w-8 h-8 flex justify-center items-center rounded-full transition-all duration-500 cursor-pointer hover:bg-[#3c404314]">
+                                                <img src="/assests/archive_baseline_nv700_20dp.png">
+                                            </div>
+                                            <div class="w-8 h-8 flex justify-center items-center rounded-full transition-all duration-500 cursor-pointer hover:bg-[#3c404314]">
+                                                <img src="/assests/delete_baseline_nv700_20dp.png">
+                                            </div>
+                                            <div class="w-8 h-8 flex justify-center items-center rounded-full transition-all duration-500 cursor-pointer hover:bg-[#3c404314]">
+                                                <img src="/assests/drafts_baseline_nv700_20dp.png">
+                                            </div>
+                                            <div class="w-8 h-8 flex justify-center items-center rounded-full transition-all duration-500 cursor-pointer hover:bg-[#3c404314]">
+                                                <img src="/assests/schedule_baseline_nv700_20dp.png">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="flex px-2 bg-white hover:shadow-md hover:border-[#dadce0] border-b-[1px] hover:border-b-[1px] cursor-pointer mailContainer">
+                                <div class="flex items-center w-1/4">
+                                    <div class="w-8 h-8 flex justify-center items-center rounded-full transition-all duration-500 cursor-pointer hover:bg-[#3c404314]">
+                                        <img src="/assests/check_box_outline_blank_baseline_nv700_20dp.png " class="opacity-40 mailIcon">
+                                    </div>
+                                    <div class="w-8 h-8 flex justify-center items-center rounded-full transition-all duration-500 cursor-pointer hover:bg-[#3c404314]">
+                                        <img src="/assests/star_border_black_20dp.png" class="opacity-40 mailIcon">
+                                    </div>
+                                    <div class="flex items-center pl-2 leading-none">
+                                        <h4 class="text-sm font-bold text-[#202124]">Myntra</h4>
+                                    </div>
+                                </div>
+                                <div class="flex items-center w-3/4">
+                                    <div class="flex px-3 items-center gap-1 overflow-hidden">
+                                            <h4 class="text-sm font-bold text-[#202124] truncate">Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto, omnis
+                                            </h4>
+                                        <div>-</div>
+                                            <p class="truncate text-sm font-normal text-[#5f6368]">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Doloribus, iure?</p>
+                                    </div>
+                                    <div class="w-[15%] flex justify-end">
+                                        <h4 class="text-xs font-bold text-[#202124] mailTime">Dec 2</h4>
+                                    </div>
+                                    <div class="hidden toolbarContainer">
+                                        <div class="flex">
+                                            <div class="w-8 h-8 flex justify-center items-center rounded-full transition-all duration-500 cursor-pointer hover:bg-[#3c404314]">
+                                                <img src="/assests/archive_baseline_nv700_20dp.png">
+                                            </div>
+                                            <div class="w-8 h-8 flex justify-center items-center rounded-full transition-all duration-500 cursor-pointer hover:bg-[#3c404314]">
+                                                <img src="/assests/delete_baseline_nv700_20dp.png">
+                                            </div>
+                                            <div class="w-8 h-8 flex justify-center items-center rounded-full transition-all duration-500 cursor-pointer hover:bg-[#3c404314]">
+                                                <img src="/assests/drafts_baseline_nv700_20dp.png">
+                                            </div>
+                                            <div class="w-8 h-8 flex justify-center items-center rounded-full transition-all duration-500 cursor-pointer hover:bg-[#3c404314]">
+                                                <img src="/assests/schedule_baseline_nv700_20dp.png">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="flex bg-[#f2f6fc] px-2 hover:shadow-md hover:border-[#dadce0] border-b-[1px] hover:border-b-[1px] cursor-pointer mailContainer">
+                                <div class="flex items-center w-1/4">
+                                    <div class="w-8 h-8 flex justify-center items-center rounded-full transition-all duration-500 cursor-pointer hover:bg-[#3c404314]">
+                                        <img src="/assests/check_box_outline_blank_baseline_nv700_20dp.png " class="opacity-40 mailIcon">
+                                    </div>
+                                    <div class="w-8 h-8 flex justify-center items-center rounded-full transition-all duration-500 cursor-pointer hover:bg-[#3c404314]">
+                                        <img src="/assests/star_border_black_20dp.png" class="opacity-40 mailIcon">
+                                    </div>
+                                    <div class="flex items-center pl-2 leading-none">
+                                        <h4 class="text-sm font-normal text-[#202124]">Amazon</h4>
+                                    </div>
+                                </div>
+                                <div class="flex items-center w-3/4">
+                                    <div class="flex px-3 items-center gap-1 overflow-hidden">
+                                            <h4 class="text-sm font-normal text-[#202124] truncate">Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto, omnis
+                                            </h4>
+                                        <div>-</div>
+                                            <p class="truncate text-sm font-normal text-[#5f6368]">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Doloribus, iure?</p>
+                                    </div>
+                                    <div class="w-[15%] flex justify-end">
+                                        <h4 class="text-xs font-bold text-[#202124] mailTime">Dec 1</h4>
+                                    </div>
+                                    <div class="hidden toolbarContainer">
+                                        <div class="flex">
+                                            <div class="w-8 h-8 flex justify-center items-center rounded-full transition-all duration-500 cursor-pointer hover:bg-[#3c404314]">
+                                                <img src="/assests/archive_baseline_nv700_20dp.png">
+                                            </div>
+                                            <div class="w-8 h-8 flex justify-center items-center rounded-full transition-all duration-500 cursor-pointer hover:bg-[#3c404314]">
+                                                <img src="/assests/delete_baseline_nv700_20dp.png">
+                                            </div>
+                                            <div class="w-8 h-8 flex justify-center items-center rounded-full transition-all duration-500 cursor-pointer hover:bg-[#3c404314]">
+                                                <img src="/assests/drafts_baseline_nv700_20dp.png">
+                                            </div>
+                                            <div class="w-8 h-8 flex justify-center items-center rounded-full transition-all duration-500 cursor-pointer hover:bg-[#3c404314]">
+                                                <img src="/assests/schedule_baseline_nv700_20dp.png">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="flex bg-[#f2f6fc] px-2 hover:shadow-md hover:border-[#dadce0] border-b-[1px] hover:border-b-[1px] cursor-pointer mailContainer">
+                                <div class="flex items-center w-1/4">
+                                    <div class="w-8 h-8 flex justify-center items-center rounded-full transition-all duration-500 cursor-pointer hover:bg-[#3c404314]">
+                                        <img src="/assests/check_box_outline_blank_baseline_nv700_20dp.png " class="opacity-40 mailIcon">
+                                    </div>
+                                    <div class="w-8 h-8 flex justify-center items-center rounded-full transition-all duration-500 cursor-pointer hover:bg-[#3c404314]">
+                                        <img src="/assests/star_border_black_20dp.png" class="opacity-40 mailIcon">
+                                    </div>
+                                    <div class="flex items-center pl-2 leading-none">
+                                        <h4 class="text-sm font-normal text-[#202124]">Flipkart</h4>
+                                    </div>
+                                </div>
+                                <div class="flex items-center w-3/4">
+                                    <div class="flex px-3 items-center gap-1 overflow-hidden">
+                                            <h4 class="text-sm font-normal text-[#202124] truncate">Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto, omnis
+                                            </h4>
+                                        <div>-</div>
+                                            <p class="truncate text-sm font-normal text-[#5f6368]">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Doloribus, iure?</p>
+                                    </div>
+                                    <div class="w-[15%] flex justify-end">
+                                        <h4 class="text-xs font-bold text-[#202124] mailTime">Dec 1</h4>
+                                    </div>
+                                    <div class="hidden toolbarContainer">
+                                        <div class="flex">
+                                            <div class="w-8 h-8 flex justify-center items-center rounded-full transition-all duration-500 cursor-pointer hover:bg-[#3c404314]">
+                                                <img src="/assests/archive_baseline_nv700_20dp.png">
+                                            </div>
+                                            <div class="w-8 h-8 flex justify-center items-center rounded-full transition-all duration-500 cursor-pointer hover:bg-[#3c404314]">
+                                                <img src="/assests/delete_baseline_nv700_20dp.png">
+                                            </div>
+                                            <div class="w-8 h-8 flex justify-center items-center rounded-full transition-all duration-500 cursor-pointer hover:bg-[#3c404314]">
+                                                <img src="/assests/drafts_baseline_nv700_20dp.png">
+                                            </div>
+                                            <div class="w-8 h-8 flex justify-center items-center rounded-full transition-all duration-500 cursor-pointer hover:bg-[#3c404314]">
+                                                <img src="/assests/schedule_baseline_nv700_20dp.png">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="flex bg-[#f2f6fc] px-2 hover:shadow-md hover:border-[#dadce0] border-b-[1px] hover:border-b-[1px] cursor-pointer mailContainer">
+                                <div class="flex items-center w-1/4">
+                                    <div class="w-8 h-8 flex justify-center items-center rounded-full transition-all duration-500 cursor-pointer hover:bg-[#3c404314]">
+                                        <img src="/assests/check_box_outline_blank_baseline_nv700_20dp.png " class="opacity-40 mailIcon">
+                                    </div>
+                                    <div class="w-8 h-8 flex justify-center items-center rounded-full transition-all duration-500 cursor-pointer hover:bg-[#3c404314]">
+                                        <img src="/assests/star_border_black_20dp.png" class="opacity-40 mailIcon">
+                                    </div>
+                                    <div class="flex items-center pl-2 leading-none">
+                                        <h4 class="text-sm font-normal text-[#202124]">Swiggy</h4>
+                                    </div>
+                                </div>
+                                <div class="flex items-center w-3/4">
+                                    <div class="flex px-3 items-center gap-1 overflow-hidden">
+                                            <h4 class="text-sm font-normal text-[#202124] truncate">Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto, omnis
+                                            </h4>
+                                        <div>-</div>
+                                            <p class="truncate text-sm font-normal text-[#5f6368]">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Doloribus, iure?</p>
+                                    </div>
+                                    <div class="w-[15%] flex justify-end">
+                                        <h4 class="text-xs font-bold text-[#202124] mailTime">Nov 29</h4>
+                                    </div>
+                                    <div class="hidden toolbarContainer">
+                                        <div class="flex">
+                                            <div class="w-8 h-8 flex justify-center items-center rounded-full transition-all duration-500 cursor-pointer hover:bg-[#3c404314]">
+                                                <img src="/assests/archive_baseline_nv700_20dp.png">
+                                            </div>
+                                            <div class="w-8 h-8 flex justify-center items-center rounded-full transition-all duration-500 cursor-pointer hover:bg-[#3c404314]">
+                                                <img src="/assests/delete_baseline_nv700_20dp.png">
+                                            </div>
+                                            <div class="w-8 h-8 flex justify-center items-center rounded-full transition-all duration-500 cursor-pointer hover:bg-[#3c404314]">
+                                                <img src="/assests/drafts_baseline_nv700_20dp.png">
+                                            </div>
+                                            <div class="w-8 h-8 flex justify-center items-center rounded-full transition-all duration-500 cursor-pointer hover:bg-[#3c404314]">
+                                                <img src="/assests/schedule_baseline_nv700_20dp.png">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="flex bg-[#f2f6fc] px-2 hover:shadow-md hover:border-[#dadce0] border-b-[1px] hover:border-b-[1px] cursor-pointer mailContainer">
+                                <div class="flex items-center w-1/4">
+                                    <div class="w-8 h-8 flex justify-center items-center rounded-full transition-all duration-500 cursor-pointer hover:bg-[#3c404314]">
+                                        <img src="/assests/check_box_outline_blank_baseline_nv700_20dp.png " class="opacity-40 mailIcon">
+                                    </div>
+                                    <div class="w-8 h-8 flex justify-center items-center rounded-full transition-all duration-500 cursor-pointer hover:bg-[#3c404314]">
+                                        <img src="/assests/star_border_black_20dp.png" class="opacity-40 mailIcon">
+                                    </div>
+                                    <div class="flex items-center pl-2 leading-none">
+                                        <h4 class="text-sm font-normal text-[#202124]">Google</h4>
+                                    </div>
+                                </div>
+                                <div class="flex items-center w-3/4">
+                                    <div class="flex px-3 items-center gap-1 overflow-hidden">
+                                            <h4 class="text-sm font-normal text-[#202124] truncate">Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto, omnis
+                                            </h4>
+                                        <div>-</div>
+                                            <p class="truncate text-sm font-normal text-[#5f6368]">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Doloribus, iure?</p>
+                                    </div>
+                                    <div class="w-[15%] flex justify-end">
+                                        <h4 class="text-xs font-bold text-[#202124] mailTime">Nov 25</h4>
+                                    </div>
+                                    <div class="hidden toolbarContainer">
+                                        <div class="flex">
+                                            <div class="w-8 h-8 flex justify-center items-center rounded-full transition-all duration-500 cursor-pointer hover:bg-[#3c404314]">
+                                                <img src="/assests/archive_baseline_nv700_20dp.png">
+                                            </div>
+                                            <div class="w-8 h-8 flex justify-center items-center rounded-full transition-all duration-500 cursor-pointer hover:bg-[#3c404314]">
+                                                <img src="/assests/delete_baseline_nv700_20dp.png">
+                                            </div>
+                                            <div class="w-8 h-8 flex justify-center items-center rounded-full transition-all duration-500 cursor-pointer hover:bg-[#3c404314]">
+                                                <img src="/assests/drafts_baseline_nv700_20dp.png">
+                                            </div>
+                                            <div class="w-8 h-8 flex justify-center items-center rounded-full transition-all duration-500 cursor-pointer hover:bg-[#3c404314]">
+                                                <img src="/assests/schedule_baseline_nv700_20dp.png">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="flex bg-[#f2f6fc] px-2 hover:shadow-md hover:border-[#dadce0] border-b-[1px] hover:border-b-[1px] cursor-pointer mailContainer">
+                                <div class="flex items-center w-1/4">
+                                    <div class="w-8 h-8 flex justify-center items-center rounded-full transition-all duration-500 cursor-pointer hover:bg-[#3c404314]">
+                                        <img src="/assests/check_box_outline_blank_baseline_nv700_20dp.png " class="opacity-40 mailIcon">
+                                    </div>
+                                    <div class="w-8 h-8 flex justify-center items-center rounded-full transition-all duration-500 cursor-pointer hover:bg-[#3c404314]">
+                                        <img src="/assests/star_border_black_20dp.png" class="opacity-40 mailIcon">
+                                    </div>
+                                    <div class="flex items-center pl-2 leading-none">
+                                        <h4 class="text-sm font-normal text-[#202124]">Google</h4>
+                                    </div>
+                                </div>
+                                <div class="flex items-center w-3/4">
+                                    <div class="flex px-3 items-center gap-1 overflow-hidden">
+                                            <h4 class="text-sm font-normal text-[#202124] truncate">Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto, omnis
+                                            </h4>
+                                        <div>-</div>
+                                            <p class="truncate text-sm font-normal text-[#5f6368]">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Doloribus, iure?</p>
+                                    </div>
+                                    <div class="w-[15%] flex justify-end">
+                                        <h4 class="text-xs font-bold text-[#202124] mailTime">Nov 25</h4>
+                                    </div>
+                                    <div class="hidden toolbarContainer">
+                                        <div class="flex">
+                                            <div class="w-8 h-8 flex justify-center items-center rounded-full transition-all duration-500 cursor-pointer hover:bg-[#3c404314]">
+                                                <img src="/assests/archive_baseline_nv700_20dp.png">
+                                            </div>
+                                            <div class="w-8 h-8 flex justify-center items-center rounded-full transition-all duration-500 cursor-pointer hover:bg-[#3c404314]">
+                                                <img src="/assests/delete_baseline_nv700_20dp.png">
+                                            </div>
+                                            <div class="w-8 h-8 flex justify-center items-center rounded-full transition-all duration-500 cursor-pointer hover:bg-[#3c404314]">
+                                                <img src="/assests/drafts_baseline_nv700_20dp.png">
+                                            </div>
+                                            <div class="w-8 h-8 flex justify-center items-center rounded-full transition-all duration-500 cursor-pointer hover:bg-[#3c404314]">
+                                                <img src="/assests/schedule_baseline_nv700_20dp.png">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="flex bg-[#f2f6fc] px-2 hover:shadow-md hover:border-[#dadce0] border-b-[1px] hover:border-b-[1px] cursor-pointer mailContainer">
+                                <div class="flex items-center w-1/4">
+                                    <div class="w-8 h-8 flex justify-center items-center rounded-full transition-all duration-500 cursor-pointer hover:bg-[#3c404314]">
+                                        <img src="/assests/check_box_outline_blank_baseline_nv700_20dp.png " class="opacity-40 mailIcon">
+                                    </div>
+                                    <div class="w-8 h-8 flex justify-center items-center rounded-full transition-all duration-500 cursor-pointer hover:bg-[#3c404314]">
+                                        <img src="/assests/star_border_black_20dp.png" class="opacity-40 mailIcon">
+                                    </div>
+                                    <div class="flex items-center pl-2 leading-none">
+                                        <h4 class="text-sm font-normal text-[#202124]">Google</h4>
+                                    </div>
+                                </div>
+                                <div class="flex items-center w-3/4">
+                                    <div class="flex px-3 items-center gap-1 overflow-hidden">
+                                            <h4 class="text-sm font-normal text-[#202124] truncate">Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto, omnis
+                                            </h4>
+                                        <div>-</div>
+                                            <p class="truncate text-sm font-normal text-[#5f6368]">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Doloribus, iure?</p>
+                                    </div>
+                                    <div class="w-[15%] flex justify-end">
+                                        <h4 class="text-xs font-bold text-[#202124] mailTime">Nov 25</h4>
+                                    </div>
+                                    <div class="hidden toolbarContainer">
+                                        <div class="flex">
+                                            <div class="w-8 h-8 flex justify-center items-center rounded-full transition-all duration-500 cursor-pointer hover:bg-[#3c404314]">
+                                                <img src="/assests/archive_baseline_nv700_20dp.png">
+                                            </div>
+                                            <div class="w-8 h-8 flex justify-center items-center rounded-full transition-all duration-500 cursor-pointer hover:bg-[#3c404314]">
+                                                <img src="/assests/delete_baseline_nv700_20dp.png">
+                                            </div>
+                                            <div class="w-8 h-8 flex justify-center items-center rounded-full transition-all duration-500 cursor-pointer hover:bg-[#3c404314]">
+                                                <img src="/assests/drafts_baseline_nv700_20dp.png">
+                                            </div>
+                                            <div class="w-8 h-8 flex justify-center items-center rounded-full transition-all duration-500 cursor-pointer hover:bg-[#3c404314]">
+                                                <img src="/assests/schedule_baseline_nv700_20dp.png">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="flex bg-[#f2f6fc] px-2 hover:shadow-md hover:border-[#dadce0] border-b-[1px] hover:border-b-[1px] cursor-pointer mailContainer">
+                                <div class="flex items-center w-1/4">
+                                    <div class="w-8 h-8 flex justify-center items-center rounded-full transition-all duration-500 cursor-pointer hover:bg-[#3c404314]">
+                                        <img src="/assests/check_box_outline_blank_baseline_nv700_20dp.png " class="opacity-40 mailIcon">
+                                    </div>
+                                    <div class="w-8 h-8 flex justify-center items-center rounded-full transition-all duration-500 cursor-pointer hover:bg-[#3c404314]">
+                                        <img src="/assests/star_border_black_20dp.png" class="opacity-40 mailIcon">
+                                    </div>
+                                    <div class="flex items-center pl-2 leading-none">
+                                        <h4 class="text-sm font-normal text-[#202124]">Google</h4>
+                                    </div>
+                                </div>
+                                <div class="flex items-center w-3/4">
+                                    <div class="flex px-3 items-center gap-1 overflow-hidden">
+                                            <h4 class="text-sm font-normal text-[#202124] truncate">Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto, omnis
+                                            </h4>
+                                        <div>-</div>
+                                            <p class="truncate text-sm font-normal text-[#5f6368]">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Doloribus, iure?</p>
+                                    </div>
+                                    <div class="w-[15%] flex justify-end">
+                                        <h4 class="text-xs font-bold text-[#202124] mailTime">Nov 25</h4>
+                                    </div>
+                                    <div class="hidden toolbarContainer">
+                                        <div class="flex">
+                                            <div class="w-8 h-8 flex justify-center items-center rounded-full transition-all duration-500 cursor-pointer hover:bg-[#3c404314]">
+                                                <img src="/assests/archive_baseline_nv700_20dp.png">
+                                            </div>
+                                            <div class="w-8 h-8 flex justify-center items-center rounded-full transition-all duration-500 cursor-pointer hover:bg-[#3c404314]">
+                                                <img src="/assests/delete_baseline_nv700_20dp.png">
+                                            </div>
+                                            <div class="w-8 h-8 flex justify-center items-center rounded-full transition-all duration-500 cursor-pointer hover:bg-[#3c404314]">
+                                                <img src="/assests/drafts_baseline_nv700_20dp.png">
+                                            </div>
+                                            <div class="w-8 h-8 flex justify-center items-center rounded-full transition-all duration-500 cursor-pointer hover:bg-[#3c404314]">
+                                                <img src="/assests/schedule_baseline_nv700_20dp.png">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="flex bg-[#f2f6fc] px-2 hover:shadow-md hover:border-[#dadce0] border-b-[1px] hover:border-b-[1px] cursor-pointer mailContainer">
+                                <div class="flex items-center w-1/4">
+                                    <div class="w-8 h-8 flex justify-center items-center rounded-full transition-all duration-500 cursor-pointer hover:bg-[#3c404314]">
+                                        <img src="/assests/check_box_outline_blank_baseline_nv700_20dp.png " class="opacity-40 mailIcon">
+                                    </div>
+                                    <div class="w-8 h-8 flex justify-center items-center rounded-full transition-all duration-500 cursor-pointer hover:bg-[#3c404314]">
+                                        <img src="/assests/star_border_black_20dp.png" class="opacity-40 mailIcon">
+                                    </div>
+                                    <div class="flex items-center pl-2 leading-none">
+                                        <h4 class="text-sm font-normal text-[#202124]">Google</h4>
+                                    </div>
+                                </div>
+                                <div class="flex items-center w-3/4">
+                                    <div class="flex px-3 items-center gap-1 overflow-hidden">
+                                            <h4 class="text-sm font-normal text-[#202124] truncate">Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto, omnis
+                                            </h4>
+                                        <div>-</div>
+                                            <p class="truncate text-sm font-normal text-[#5f6368]">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Doloribus, iure?</p>
+                                    </div>
+                                    <div class="w-[15%] flex justify-end">
+                                        <h4 class="text-xs font-bold text-[#202124] mailTime">Nov 25</h4>
+                                    </div>
+                                    <div class="hidden toolbarContainer">
+                                        <div class="flex">
+                                            <div class="w-8 h-8 flex justify-center items-center rounded-full transition-all duration-500 cursor-pointer hover:bg-[#3c404314]">
+                                                <img src="/assests/archive_baseline_nv700_20dp.png">
+                                            </div>
+                                            <div class="w-8 h-8 flex justify-center items-center rounded-full transition-all duration-500 cursor-pointer hover:bg-[#3c404314]">
+                                                <img src="/assests/delete_baseline_nv700_20dp.png">
+                                            </div>
+                                            <div class="w-8 h-8 flex justify-center items-center rounded-full transition-all duration-500 cursor-pointer hover:bg-[#3c404314]">
+                                                <img src="/assests/drafts_baseline_nv700_20dp.png">
+                                            </div>
+                                            <div class="w-8 h-8 flex justify-center items-center rounded-full transition-all duration-500 cursor-pointer hover:bg-[#3c404314]">
+                                                <img src="/assests/schedule_baseline_nv700_20dp.png">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="flex bg-[#f2f6fc] px-2 hover:shadow-md hover:border-[#dadce0] border-b-[1px] hover:border-b-[1px] cursor-pointer mailContainer">
+                                <div class="flex items-center w-1/4">
+                                    <div class="w-8 h-8 flex justify-center items-center rounded-full transition-all duration-500 cursor-pointer hover:bg-[#3c404314]">
+                                        <img src="/assests/check_box_outline_blank_baseline_nv700_20dp.png " class="opacity-40 mailIcon">
+                                    </div>
+                                    <div class="w-8 h-8 flex justify-center items-center rounded-full transition-all duration-500 cursor-pointer hover:bg-[#3c404314]">
+                                        <img src="/assests/star_border_black_20dp.png" class="opacity-40 mailIcon">
+                                    </div>
+                                    <div class="flex items-center pl-2 leading-none">
+                                        <h4 class="text-sm font-normal text-[#202124]">Google</h4>
+                                    </div>
+                                </div>
+                                <div class="flex items-center w-3/4">
+                                    <div class="flex px-3 items-center gap-1 overflow-hidden">
+                                            <h4 class="text-sm font-normal text-[#202124] truncate">Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto, omnis
+                                            </h4>
+                                        <div>-</div>
+                                            <p class="truncate text-sm font-normal text-[#5f6368]">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Doloribus, iure?</p>
+                                    </div>
+                                    <div class="w-[15%] flex justify-end">
+                                        <h4 class="text-xs font-bold text-[#202124] mailTime">Nov 25</h4>
+                                    </div>
+                                    <div class="hidden toolbarContainer">
+                                        <div class="flex">
+                                            <div class="w-8 h-8 flex justify-center items-center rounded-full transition-all duration-500 cursor-pointer hover:bg-[#3c404314]">
+                                                <img src="/assests/archive_baseline_nv700_20dp.png">
+                                            </div>
+                                            <div class="w-8 h-8 flex justify-center items-center rounded-full transition-all duration-500 cursor-pointer hover:bg-[#3c404314]">
+                                                <img src="/assests/delete_baseline_nv700_20dp.png">
+                                            </div>
+                                            <div class="w-8 h-8 flex justify-center items-center rounded-full transition-all duration-500 cursor-pointer hover:bg-[#3c404314]">
+                                                <img src="/assests/drafts_baseline_nv700_20dp.png">
+                                            </div>
+                                            <div class="w-8 h-8 flex justify-center items-center rounded-full transition-all duration-500 cursor-pointer hover:bg-[#3c404314]">
+                                                <img src="/assests/schedule_baseline_nv700_20dp.png">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="flex bg-[#f2f6fc] px-2 hover:shadow-md hover:border-[#dadce0] border-b-[1px] hover:border-b-[1px] cursor-pointer mailContainer">
+                                <div class="flex items-center w-1/4">
+                                    <div class="w-8 h-8 flex justify-center items-center rounded-full transition-all duration-500 cursor-pointer hover:bg-[#3c404314]">
+                                        <img src="/assests/check_box_outline_blank_baseline_nv700_20dp.png " class="opacity-40 mailIcon">
+                                    </div>
+                                    <div class="w-8 h-8 flex justify-center items-center rounded-full transition-all duration-500 cursor-pointer hover:bg-[#3c404314]">
+                                        <img src="/assests/star_border_black_20dp.png" class="opacity-40 mailIcon">
+                                    </div>
+                                    <div class="flex items-center pl-2 leading-none">
+                                        <h4 class="text-sm font-normal text-[#202124]">Google</h4>
+                                    </div>
+                                </div>
+                                <div class="flex items-center w-3/4">
+                                    <div class="flex px-3 items-center gap-1 overflow-hidden">
+                                            <h4 class="text-sm font-normal text-[#202124] truncate">Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto, omnis
+                                            </h4>
+                                        <div>-</div>
+                                            <p class="truncate text-sm font-normal text-[#5f6368]">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Doloribus, iure?</p>
+                                    </div>
+                                    <div class="w-[15%] flex justify-end">
+                                        <h4 class="text-xs font-bold text-[#202124] mailTime">Nov 25</h4>
+                                    </div>
+                                    <div class="hidden toolbarContainer">
+                                        <div class="flex">
+                                            <div class="w-8 h-8 flex justify-center items-center rounded-full transition-all duration-500 cursor-pointer hover:bg-[#3c404314]">
+                                                <img src="/assests/archive_baseline_nv700_20dp.png">
+                                            </div>
+                                            <div class="w-8 h-8 flex justify-center items-center rounded-full transition-all duration-500 cursor-pointer hover:bg-[#3c404314]">
+                                                <img src="/assests/delete_baseline_nv700_20dp.png">
+                                            </div>
+                                            <div class="w-8 h-8 flex justify-center items-center rounded-full transition-all duration-500 cursor-pointer hover:bg-[#3c404314]">
+                                                <img src="/assests/drafts_baseline_nv700_20dp.png">
+                                            </div>
+                                            <div class="w-8 h-8 flex justify-center items-center rounded-full transition-all duration-500 cursor-pointer hover:bg-[#3c404314]">
+                                                <img src="/assests/schedule_baseline_nv700_20dp.png">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="flex bg-[#f2f6fc] px-2 hover:shadow-md hover:border-[#dadce0] border-b-[1px] hover:border-b-[1px] cursor-pointer mailContainer">
+                                <div class="flex items-center w-1/4">
+                                    <div class="w-8 h-8 flex justify-center items-center rounded-full transition-all duration-500 cursor-pointer hover:bg-[#3c404314]">
+                                        <img src="/assests/check_box_outline_blank_baseline_nv700_20dp.png " class="opacity-40 mailIcon">
+                                    </div>
+                                    <div class="w-8 h-8 flex justify-center items-center rounded-full transition-all duration-500 cursor-pointer hover:bg-[#3c404314]">
+                                        <img src="/assests/star_border_black_20dp.png" class="opacity-40 mailIcon">
+                                    </div>
+                                    <div class="flex items-center pl-2 leading-none">
+                                        <h4 class="text-sm font-normal text-[#202124]">Google</h4>
+                                    </div>
+                                </div>
+                                <div class="flex items-center w-3/4">
+                                    <div class="flex px-3 items-center gap-1 overflow-hidden">
+                                            <h4 class="text-sm font-normal text-[#202124] truncate">Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto, omnis
+                                            </h4>
+                                        <div>-</div>
+                                            <p class="truncate text-sm font-normal text-[#5f6368]">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Doloribus, iure?</p>
+                                    </div>
+                                    <div class="w-[15%] flex justify-end">
+                                        <h4 class="text-xs font-bold text-[#202124] mailTime">Nov 25</h4>
+                                    </div>
+                                    <div class="hidden toolbarContainer">
+                                        <div class="flex">
+                                            <div class="w-8 h-8 flex justify-center items-center rounded-full transition-all duration-500 cursor-pointer hover:bg-[#3c404314]">
+                                                <img src="/assests/archive_baseline_nv700_20dp.png">
+                                            </div>
+                                            <div class="w-8 h-8 flex justify-center items-center rounded-full transition-all duration-500 cursor-pointer hover:bg-[#3c404314]">
+                                                <img src="/assests/delete_baseline_nv700_20dp.png">
+                                            </div>
+                                            <div class="w-8 h-8 flex justify-center items-center rounded-full transition-all duration-500 cursor-pointer hover:bg-[#3c404314]">
+                                                <img src="/assests/drafts_baseline_nv700_20dp.png">
+                                            </div>
+                                            <div class="w-8 h-8 flex justify-center items-center rounded-full transition-all duration-500 cursor-pointer hover:bg-[#3c404314]">
+                                                <img src="/assests/schedule_baseline_nv700_20dp.png">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="flex bg-[#f2f6fc] px-2 hover:shadow-md hover:border-[#dadce0] border-b-[1px] hover:border-b-[1px] cursor-pointer mailContainer">
+                                <div class="flex items-center w-1/4">
+                                    <div class="w-8 h-8 flex justify-center items-center rounded-full transition-all duration-500 cursor-pointer hover:bg-[#3c404314]">
+                                        <img src="/assests/check_box_outline_blank_baseline_nv700_20dp.png " class="opacity-40 mailIcon">
+                                    </div>
+                                    <div class="w-8 h-8 flex justify-center items-center rounded-full transition-all duration-500 cursor-pointer hover:bg-[#3c404314]">
+                                        <img src="/assests/star_border_black_20dp.png" class="opacity-40 mailIcon">
+                                    </div>
+                                    <div class="flex items-center pl-2 leading-none">
+                                        <h4 class="text-sm font-normal text-[#202124]">Google</h4>
+                                    </div>
+                                </div>
+                                <div class="flex items-center w-3/4">
+                                    <div class="flex px-3 items-center gap-1 overflow-hidden">
+                                            <h4 class="text-sm font-normal text-[#202124] truncate">Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto, omnis
+                                            </h4>
+                                        <div>-</div>
+                                            <p class="truncate text-sm font-normal text-[#5f6368]">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Doloribus, iure?</p>
+                                    </div>
+                                    <div class="w-[15%] flex justify-end">
+                                        <h4 class="text-xs font-bold text-[#202124] mailTime">Nov 25</h4>
+                                    </div>
+                                    <div class="hidden toolbarContainer">
+                                        <div class="flex">
+                                            <div class="w-8 h-8 flex justify-center items-center rounded-full transition-all duration-500 cursor-pointer hover:bg-[#3c404314]">
+                                                <img src="/assests/archive_baseline_nv700_20dp.png">
+                                            </div>
+                                            <div class="w-8 h-8 flex justify-center items-center rounded-full transition-all duration-500 cursor-pointer hover:bg-[#3c404314]">
+                                                <img src="/assests/delete_baseline_nv700_20dp.png">
+                                            </div>
+                                            <div class="w-8 h-8 flex justify-center items-center rounded-full transition-all duration-500 cursor-pointer hover:bg-[#3c404314]">
+                                                <img src="/assests/drafts_baseline_nv700_20dp.png">
+                                            </div>
+                                            <div class="w-8 h-8 flex justify-center items-center rounded-full transition-all duration-500 cursor-pointer hover:bg-[#3c404314]">
+                                                <img src="/assests/schedule_baseline_nv700_20dp.png">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="flex bg-[#f2f6fc] px-2 hover:shadow-md hover:border-[#dadce0] border-b-[1px] hover:border-b-[1px] cursor-pointer mailContainer">
+                                <div class="flex items-center w-1/4">
+                                    <div class="w-8 h-8 flex justify-center items-center rounded-full transition-all duration-500 cursor-pointer hover:bg-[#3c404314]">
+                                        <img src="/assests/check_box_outline_blank_baseline_nv700_20dp.png " class="opacity-40 mailIcon">
+                                    </div>
+                                    <div class="w-8 h-8 flex justify-center items-center rounded-full transition-all duration-500 cursor-pointer hover:bg-[#3c404314]">
+                                        <img src="/assests/star_border_black_20dp.png" class="opacity-40 mailIcon">
+                                    </div>
+                                    <div class="flex items-center pl-2 leading-none">
+                                        <h4 class="text-sm font-normal text-[#202124]">Google</h4>
+                                    </div>
+                                </div>
+                                <div class="flex items-center w-3/4">
+                                    <div class="flex px-3 items-center gap-1 overflow-hidden">
+                                            <h4 class="text-sm font-normal text-[#202124] truncate">Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto, omnis
+                                            </h4>
+                                        <div>-</div>
+                                            <p class="truncate text-sm font-normal text-[#5f6368]">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Doloribus, iure?</p>
+                                    </div>
+                                    <div class="w-[15%] flex justify-end">
+                                        <h4 class="text-xs font-bold text-[#202124] mailTime">Nov 25</h4>
+                                    </div>
+                                    <div class="hidden toolbarContainer">
+                                        <div class="flex">
+                                            <div class="w-8 h-8 flex justify-center items-center rounded-full transition-all duration-500 cursor-pointer hover:bg-[#3c404314]">
+                                                <img src="/assests/archive_baseline_nv700_20dp.png">
+                                            </div>
+                                            <div class="w-8 h-8 flex justify-center items-center rounded-full transition-all duration-500 cursor-pointer hover:bg-[#3c404314]">
+                                                <img src="/assests/delete_baseline_nv700_20dp.png">
+                                            </div>
+                                            <div class="w-8 h-8 flex justify-center items-center rounded-full transition-all duration-500 cursor-pointer hover:bg-[#3c404314]">
+                                                <img src="/assests/drafts_baseline_nv700_20dp.png">
+                                            </div>
+                                            <div class="w-8 h-8 flex justify-center items-center rounded-full transition-all duration-500 cursor-pointer hover:bg-[#3c404314]">
+                                                <img src="/assests/schedule_baseline_nv700_20dp.png">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="flex bg-[#f2f6fc] px-2 hover:shadow-md hover:border-[#dadce0] border-b-[1px] hover:border-b-[1px] cursor-pointer mailContainer">
+                                <div class="flex items-center w-1/4">
+                                    <div class="w-8 h-8 flex justify-center items-center rounded-full transition-all duration-500 cursor-pointer hover:bg-[#3c404314]">
+                                        <img src="/assests/check_box_outline_blank_baseline_nv700_20dp.png " class="opacity-40 mailIcon">
+                                    </div>
+                                    <div class="w-8 h-8 flex justify-center items-center rounded-full transition-all duration-500 cursor-pointer hover:bg-[#3c404314]">
+                                        <img src="/assests/star_border_black_20dp.png" class="opacity-40 mailIcon">
+                                    </div>
+                                    <div class="flex items-center pl-2 leading-none">
+                                        <h4 class="text-sm font-normal text-[#202124]">Google</h4>
+                                    </div>
+                                </div>
+                                <div class="flex items-center w-3/4">
+                                    <div class="flex px-3 items-center gap-1 overflow-hidden">
+                                            <h4 class="text-sm font-normal text-[#202124] truncate">Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto, omnis
+                                            </h4>
+                                        <div>-</div>
+                                            <p class="truncate text-sm font-normal text-[#5f6368]">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Doloribus, iure?</p>
+                                    </div>
+                                    <div class="w-[15%] flex justify-end">
+                                        <h4 class="text-xs font-bold text-[#202124] mailTime">Nov 25</h4>
+                                    </div>
+                                    <div class="hidden toolbarContainer">
+                                        <div class="flex">
+                                            <div class="w-8 h-8 flex justify-center items-center rounded-full transition-all duration-500 cursor-pointer hover:bg-[#3c404314]">
+                                                <img src="/assests/archive_baseline_nv700_20dp.png">
+                                            </div>
+                                            <div class="w-8 h-8 flex justify-center items-center rounded-full transition-all duration-500 cursor-pointer hover:bg-[#3c404314]">
+                                                <img src="/assests/delete_baseline_nv700_20dp.png">
+                                            </div>
+                                            <div class="w-8 h-8 flex justify-center items-center rounded-full transition-all duration-500 cursor-pointer hover:bg-[#3c404314]">
+                                                <img src="/assests/drafts_baseline_nv700_20dp.png">
+                                            </div>
+                                            <div class="w-8 h-8 flex justify-center items-center rounded-full transition-all duration-500 cursor-pointer hover:bg-[#3c404314]">
+                                                <img src="/assests/schedule_baseline_nv700_20dp.png">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="flex bg-[#f2f6fc] px-2 hover:shadow-md hover:border-[#dadce0] border-b-[1px] hover:border-b-[1px] cursor-pointer mailContainer">
+                                <div class="flex items-center w-1/4">
+                                    <div class="w-8 h-8 flex justify-center items-center rounded-full transition-all duration-500 cursor-pointer hover:bg-[#3c404314]">
+                                        <img src="/assests/check_box_outline_blank_baseline_nv700_20dp.png " class="opacity-40 mailIcon">
+                                    </div>
+                                    <div class="w-8 h-8 flex justify-center items-center rounded-full transition-all duration-500 cursor-pointer hover:bg-[#3c404314]">
+                                        <img src="/assests/star_border_black_20dp.png" class="opacity-40 mailIcon">
+                                    </div>
+                                    <div class="flex items-center pl-2 leading-none">
+                                        <h4 class="text-sm font-normal text-[#202124]">Google</h4>
+                                    </div>
+                                </div>
+                                <div class="flex items-center w-3/4">
+                                    <div class="flex px-3 items-center gap-1 overflow-hidden">
+                                            <h4 class="text-sm font-normal text-[#202124] truncate">Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto, omnis
+                                            </h4>
+                                        <div>-</div>
+                                            <p class="truncate text-sm font-normal text-[#5f6368]">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Doloribus, iure?</p>
+                                    </div>
+                                    <div class="w-[15%] flex justify-end">
+                                        <h4 class="text-xs font-bold text-[#202124] mailTime">Nov 25</h4>
+                                    </div>
+                                    <div class="hidden toolbarContainer">
+                                        <div class="flex">
+                                            <div class="w-8 h-8 flex justify-center items-center rounded-full transition-all duration-500 cursor-pointer hover:bg-[#3c404314]">
+                                                <img src="/assests/archive_baseline_nv700_20dp.png">
+                                            </div>
+                                            <div class="w-8 h-8 flex justify-center items-center rounded-full transition-all duration-500 cursor-pointer hover:bg-[#3c404314]">
+                                                <img src="/assests/delete_baseline_nv700_20dp.png">
+                                            </div>
+                                            <div class="w-8 h-8 flex justify-center items-center rounded-full transition-all duration-500 cursor-pointer hover:bg-[#3c404314]">
+                                                <img src="/assests/drafts_baseline_nv700_20dp.png">
+                                            </div>
+                                            <div class="w-8 h-8 flex justify-center items-center rounded-full transition-all duration-500 cursor-pointer hover:bg-[#3c404314]">
+                                                <img src="/assests/schedule_baseline_nv700_20dp.png">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="flex bg-[#f2f6fc] px-2 hover:shadow-md hover:border-[#dadce0] border-b-[1px] hover:border-b-[1px] cursor-pointer mailContainer">
+                                <div class="flex items-center w-1/4">
+                                    <div class="w-8 h-8 flex justify-center items-center rounded-full transition-all duration-500 cursor-pointer hover:bg-[#3c404314]">
+                                        <img src="/assests/check_box_outline_blank_baseline_nv700_20dp.png " class="opacity-40 mailIcon">
+                                    </div>
+                                    <div class="w-8 h-8 flex justify-center items-center rounded-full transition-all duration-500 cursor-pointer hover:bg-[#3c404314]">
+                                        <img src="/assests/star_border_black_20dp.png" class="opacity-40 mailIcon">
+                                    </div>
+                                    <div class="flex items-center pl-2 leading-none">
+                                        <h4 class="text-sm font-normal text-[#202124]">Google</h4>
+                                    </div>
+                                </div>
+                                <div class="flex items-center w-3/4">
+                                    <div class="flex px-3 items-center gap-1 overflow-hidden">
+                                            <h4 class="text-sm font-normal text-[#202124] truncate">Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto, omnis
+                                            </h4>
+                                        <div>-</div>
+                                            <p class="truncate text-sm font-normal text-[#5f6368]">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Doloribus, iure?</p>
+                                    </div>
+                                    <div class="w-[15%] flex justify-end">
+                                        <h4 class="text-xs font-bold text-[#202124] mailTime">Nov 25</h4>
+                                    </div>
+                                    <div class="hidden toolbarContainer">
+                                        <div class="flex">
+                                            <div class="w-8 h-8 flex justify-center items-center rounded-full transition-all duration-500 cursor-pointer hover:bg-[#3c404314]">
+                                                <img src="/assests/archive_baseline_nv700_20dp.png">
+                                            </div>
+                                            <div class="w-8 h-8 flex justify-center items-center rounded-full transition-all duration-500 cursor-pointer hover:bg-[#3c404314]">
+                                                <img src="/assests/delete_baseline_nv700_20dp.png">
+                                            </div>
+                                            <div class="w-8 h-8 flex justify-center items-center rounded-full transition-all duration-500 cursor-pointer hover:bg-[#3c404314]">
+                                                <img src="/assests/drafts_baseline_nv700_20dp.png">
+                                            </div>
+                                            <div class="w-8 h-8 flex justify-center items-center rounded-full transition-all duration-500 cursor-pointer hover:bg-[#3c404314]">
+                                                <img src="/assests/schedule_baseline_nv700_20dp.png">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="flex bg-[#f2f6fc] px-2 hover:shadow-md hover:border-[#dadce0] border-b-[1px] hover:border-b-[1px] cursor-pointer mailContainer">
+                                <div class="flex items-center w-1/4">
+                                    <div class="w-8 h-8 flex justify-center items-center rounded-full transition-all duration-500 cursor-pointer hover:bg-[#3c404314]">
+                                        <img src="/assests/check_box_outline_blank_baseline_nv700_20dp.png " class="opacity-40 mailIcon">
+                                    </div>
+                                    <div class="w-8 h-8 flex justify-center items-center rounded-full transition-all duration-500 cursor-pointer hover:bg-[#3c404314]">
+                                        <img src="/assests/star_border_black_20dp.png" class="opacity-40 mailIcon">
+                                    </div>
+                                    <div class="flex items-center pl-2 leading-none">
+                                        <h4 class="text-sm font-normal text-[#202124]">Google</h4>
+                                    </div>
+                                </div>
+                                <div class="flex items-center w-3/4">
+                                    <div class="flex px-3 items-center gap-1 overflow-hidden">
+                                            <h4 class="text-sm font-normal text-[#202124] truncate">Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto, omnis
+                                            </h4>
+                                        <div>-</div>
+                                            <p class="truncate text-sm font-normal text-[#5f6368]">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Doloribus, iure?</p>
+                                    </div>
+                                    <div class="w-[15%] flex justify-end">
+                                        <h4 class="text-xs font-bold text-[#202124] mailTime">Nov 25</h4>
+                                    </div>
+                                    <div class="hidden toolbarContainer">
+                                        <div class="flex">
+                                            <div class="w-8 h-8 flex justify-center items-center rounded-full transition-all duration-500 cursor-pointer hover:bg-[#3c404314]">
+                                                <img src="/assests/archive_baseline_nv700_20dp.png">
+                                            </div>
+                                            <div class="w-8 h-8 flex justify-center items-center rounded-full transition-all duration-500 cursor-pointer hover:bg-[#3c404314]">
+                                                <img src="/assests/delete_baseline_nv700_20dp.png">
+                                            </div>
+                                            <div class="w-8 h-8 flex justify-center items-center rounded-full transition-all duration-500 cursor-pointer hover:bg-[#3c404314]">
+                                                <img src="/assests/drafts_baseline_nv700_20dp.png">
+                                            </div>
+                                            <div class="w-8 h-8 flex justify-center items-center rounded-full transition-all duration-500 cursor-pointer hover:bg-[#3c404314]">
+                                                <img src="/assests/schedule_baseline_nv700_20dp.png">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="flex bg-[#f2f6fc] px-2 hover:shadow-md hover:border-[#dadce0] border-b-[1px] hover:border-b-[1px] cursor-pointer mailContainer">
+                                <div class="flex items-center w-1/4">
+                                    <div class="w-8 h-8 flex justify-center items-center rounded-full transition-all duration-500 cursor-pointer hover:bg-[#3c404314]">
+                                        <img src="/assests/check_box_outline_blank_baseline_nv700_20dp.png " class="opacity-40 mailIcon">
+                                    </div>
+                                    <div class="w-8 h-8 flex justify-center items-center rounded-full transition-all duration-500 cursor-pointer hover:bg-[#3c404314]">
+                                        <img src="/assests/star_border_black_20dp.png" class="opacity-40 mailIcon">
+                                    </div>
+                                    <div class="flex items-center pl-2 leading-none">
+                                        <h4 class="text-sm font-normal text-[#202124]">Google</h4>
+                                    </div>
+                                </div>
+                                <div class="flex items-center w-3/4">
+                                    <div class="flex px-3 items-center gap-1 overflow-hidden">
+                                            <h4 class="text-sm font-normal text-[#202124] truncate">Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto, omnis
+                                            </h4>
+                                        <div>-</div>
+                                            <p class="truncate text-sm font-normal text-[#5f6368]">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Doloribus, iure?</p>
+                                    </div>
+                                    <div class="w-[15%] flex justify-end">
+                                        <h4 class="text-xs font-bold text-[#202124] mailTime">Nov 25</h4>
+                                    </div>
+                                    <div class="hidden toolbarContainer">
+                                        <div class="flex">
+                                            <div class="w-8 h-8 flex justify-center items-center rounded-full transition-all duration-500 cursor-pointer hover:bg-[#3c404314]">
+                                                <img src="/assests/archive_baseline_nv700_20dp.png">
+                                            </div>
+                                            <div class="w-8 h-8 flex justify-center items-center rounded-full transition-all duration-500 cursor-pointer hover:bg-[#3c404314]">
+                                                <img src="/assests/delete_baseline_nv700_20dp.png">
+                                            </div>
+                                            <div class="w-8 h-8 flex justify-center items-center rounded-full transition-all duration-500 cursor-pointer hover:bg-[#3c404314]">
+                                                <img src="/assests/drafts_baseline_nv700_20dp.png">
+                                            </div>
+                                            <div class="w-8 h-8 flex justify-center items-center rounded-full transition-all duration-500 cursor-pointer hover:bg-[#3c404314]">
+                                                <img src="/assests/schedule_baseline_nv700_20dp.png">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="flex bg-[#f2f6fc] px-2 hover:shadow-md hover:border-[#dadce0] border-b-[1px] hover:border-b-[1px] cursor-pointer mailContainer">
+                                <div class="flex items-center w-1/4">
+                                    <div class="w-8 h-8 flex justify-center items-center rounded-full transition-all duration-500 cursor-pointer hover:bg-[#3c404314]">
+                                        <img src="/assests/check_box_outline_blank_baseline_nv700_20dp.png " class="opacity-40 mailIcon">
+                                    </div>
+                                    <div class="w-8 h-8 flex justify-center items-center rounded-full transition-all duration-500 cursor-pointer hover:bg-[#3c404314]">
+                                        <img src="/assests/star_border_black_20dp.png" class="opacity-40 mailIcon">
+                                    </div>
+                                    <div class="flex items-center pl-2 leading-none">
+                                        <h4 class="text-sm font-normal text-[#202124]">Google</h4>
+                                    </div>
+                                </div>
+                                <div class="flex items-center w-3/4">
+                                    <div class="flex px-3 items-center gap-1 overflow-hidden">
+                                            <h4 class="text-sm font-normal text-[#202124] truncate">Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto, omnis
+                                            </h4>
+                                        <div>-</div>
+                                            <p class="truncate text-sm font-normal text-[#5f6368]">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Doloribus, iure?</p>
+                                    </div>
+                                    <div class="w-[15%] flex justify-end">
+                                        <h4 class="text-xs font-bold text-[#202124] mailTime">Nov 25</h4>
+                                    </div>
+                                    <div class="hidden toolbarContainer">
+                                        <div class="flex">
+                                            <div class="w-8 h-8 flex justify-center items-center rounded-full transition-all duration-500 cursor-pointer hover:bg-[#3c404314]">
+                                                <img src="/assests/archive_baseline_nv700_20dp.png">
+                                            </div>
+                                            <div class="w-8 h-8 flex justify-center items-center rounded-full transition-all duration-500 cursor-pointer hover:bg-[#3c404314]">
+                                                <img src="/assests/delete_baseline_nv700_20dp.png">
+                                            </div>
+                                            <div class="w-8 h-8 flex justify-center items-center rounded-full transition-all duration-500 cursor-pointer hover:bg-[#3c404314]">
+                                                <img src="/assests/drafts_baseline_nv700_20dp.png">
+                                            </div>
+                                            <div class="w-8 h-8 flex justify-center items-center rounded-full transition-all duration-500 cursor-pointer hover:bg-[#3c404314]">
+                                                <img src="/assests/schedule_baseline_nv700_20dp.png">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="w-[7%] h-[97%] flex flex-col items-end justify-between">
+                <div class="flex flex-col gap-6 h-full pr-2 py-2">
+                    <div class="h-10 w-10 rounded-full flex justify-center items-center transition-all duration-700 cursor-pointer hover:bg-[#dadce0]">
+                        <img src="assests/dpImg.jpg" class="rounded-full w-8 h-8 object-cover">
+                    </div>
+                    <div class="flex flex-col gap-4">
+                        <div class="w-12  text-center">
+                            <div class="w-10 h-10 flex justify-center items-center rounded-full hover:bg-[#dadce0] cursor-pointer ">
+                                <img class="w-[20px] h-[20px]" src="/assests/calendar_2020q4_2x.png">
+                            </div>
+                        </div>                 
+                        <div class="w-12 flex flex-col gap-[3px] text-center">
+                            <div class="w-10 h-10 flex justify-center items-center rounded-full hover:bg-[#dadce0] cursor-pointer ">
+                                <img class="w-[20px] h-[20px]" src="/assests/keep_2020q4v3_2x.png">
+                            </div>
+                        </div>                 
+                        <div class="w-12 text-center">
+                            <div class="w-10 h-10 flex justify-center items-center rounded-full hover:bg-[#dadce0] cursor-pointer ">
+                                <img class="w-[20px] h-[20px]" src="/assests/tasks_2021_2x.png">
+                            </div>
+                        </div>                 
+                        <div class="w-12 text-center">
+                            <div class="w-10 h-10 flex justify-center items-center rounded-full hover:bg-[#dadce0] cursor-pointer ">
+                                <img class="w-[20px] h-[20px]" src="/assests/contacts_2022_2x.png">
+                            </div>
+                        </div>                 
+                        <div class="w-12 text-center">
+                            <div class="w-10 h-2 flex justify-center items-center border-b-[1px] border-b-[#e1e3e1] ">
+                            </div>
+                        </div>
+                        <div class="w-12 text-center">
+                            <div class="w-10 h-10 flex justify-center items-center rounded-full hover:bg-[#dadce0] cursor-pointer ">
+                                <img class="w-[20px] h-[20px]" src="/assests/gm_add_black_24dp.png">
+                            </div>
+                        </div>                  
+                    </div>
+                </div>
+                <div>
+                    <div class="w-12 text-center">
+                        <div class="w-10 h-10 flex justify-center items-center rounded-full hover:bg-[#dadce0] cursor-pointer ">
+                            <img src="/assests/chevron_right_baseline_nv700_20dp.png">
+                        </div>
+                    </div> 
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
